@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "allowUnreachableCode": false,
+    "exactOptionalPropertyTypes": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "allowImportingTsExtensions": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "noUncheckedSideEffectImports": false,
+    "resolveJsonModule": true,
+    "newLine": "lf",
+    "noEmit": true,
+    "removeComments": true,
+    "verbatimModuleSyntax": true,
+    "jsx": "react-jsx",
+    "target": "esnext",
+    "skipLibCheck": true
+  }
+}
