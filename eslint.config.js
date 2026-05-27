@@ -66,8 +66,6 @@ export default [
           sortSideEffects: true,
         },
       ],
-      "perfectionist/sort-interfaces": "error",
-      "perfectionist/sort-jsx-props": "error",
       "perfectionist/sort-object-types": "error",
     },
   },

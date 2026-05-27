@@ -16,6 +16,9 @@
     "verbatimModuleSyntax": true,
     "jsx": "react-jsx",
     "target": "esnext",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   }
 }
