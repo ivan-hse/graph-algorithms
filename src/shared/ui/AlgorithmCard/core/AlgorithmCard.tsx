@@ -1,6 +1,13 @@
 import styles from "./AlgorithmCard.module.css";
 
-import { Card, Title, Text, Badge, Stack } from "@mantine/core";
+import {
+  Card,
+  Title,
+  Text,
+  Badge,
+  Stack,
+  type BadgeProps,
+} from "@mantine/core";
 
 import { dictionary } from "@/shared/static";
 
@@ -9,7 +16,7 @@ import type { IAlgorithmCardProps } from "../types/IAlgorithmCardProps.ts";
 const AlgorithmCard = (props: IAlgorithmCardProps) => {
   const { algorithmType, title, text, onClick } = props;
 
-  const badgeProps: Record<string, string> = {
+  const badgeProps: BadgeProps = {
     traversal: {
       children: dictionary.traversal,
       color: "blue",
@@ -29,7 +36,7 @@ const AlgorithmCard = (props: IAlgorithmCardProps) => {
       <Stack gap="xs">
         <Title order={3}>{title}</Title>
 
-        <Badge {...badgeProps} />
+        <Badge {...badgeProps} className={styles.badge} />
 
         <Text size="sm">{text}</Text>
       </Stack>

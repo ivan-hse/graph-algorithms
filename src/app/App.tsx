@@ -17,7 +17,7 @@ import { theme } from "./theme.ts";
 
 const App = () => {
   return (
-    <MantineProvider defaultColorScheme="dark" theme={theme}>
+    <MantineProvider forceColorScheme="dark" theme={theme}>
       <Router>
         <Switch>
           <Route path={ROUTES.START} component={StartPage} />
