@@ -4,6 +4,7 @@ import { defineConfig } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
+  base: "/graph-algorithms/",
   plugins: [react(), VitePWA()],
   server: {
     host: "0.0.0.0",
