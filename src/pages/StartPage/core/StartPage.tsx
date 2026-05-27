@@ -1,11 +1,13 @@
 import { Flex, Stack, Title } from "@mantine/core";
-import { navigate } from "wouter/use-browser-location";
+import { useLocation } from "wouter";
 
 import { MainLayout } from "@/shared/layouts/MainLayout";
 import { dictionary, ROUTES } from "@/shared/static";
 import { AlgorithmCard } from "@/shared/ui/AlgorithmCard";
 
 const StartPage = () => {
+  const [, navigate] = useLocation();
+
   return (
     <MainLayout>
       <Stack align="center" gap="xl">
