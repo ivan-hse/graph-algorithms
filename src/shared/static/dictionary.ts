@@ -24,6 +24,9 @@ const dictionary = {
   shortestPath: "Поиск кратчайшего пути",
   mst: "Минимальное остовное дерево",
   startPageTitle: "Изучение алгоритмов на графах через визуализацию",
+  useGraphError: "useGraph должен использоваться внутри <GraphProvider>",
+  useAlgorithmRunnerError:
+    "useAlgorithmRunner должен использоваться внутри <AlgorithmRunnerProvider>",
 } as const;
 
 export { dictionary };
