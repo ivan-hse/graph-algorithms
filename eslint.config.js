@@ -6,6 +6,18 @@ import { globalIgnores } from "eslint/config";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
+const sortingConfig = [
+  "error",
+  {
+    type: "unsorted",
+    groups: [
+      ["required-property", "required-index-signature"],
+      ["optional-property", "optional-index-signature"],
+      "method",
+    ],
+  },
+];
+
 export default [
   globalIgnores(["dist", "node_modules"]),
   js.configs.recommended,
@@ -66,7 +78,8 @@ export default [
           sortSideEffects: true,
         },
       ],
-      "perfectionist/sort-object-types": "error",
+      "perfectionist/sort-interfaces": sortingConfig,
+      "perfectionist/sort-object-types": sortingConfig,
     },
   },
 ];
