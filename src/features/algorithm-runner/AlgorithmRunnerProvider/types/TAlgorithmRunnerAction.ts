@@ -1,7 +1,7 @@
 import type { IAlgorithmStep } from "@/algorithms/types";
 
-type TAlgorithmRunnerAction =
-  | { type: "LOAD_STEPS"; steps: IAlgorithmStep[] }
+type TAlgorithmRunnerAction<TAlgorithmState extends object> =
+  | { type: "LOAD_STEPS"; steps: IAlgorithmStep<TAlgorithmState>[] }
   | { type: "STEP_FORWARD" }
   | { type: "STEP_BACKWARD" }
   | { type: "PLAY" }

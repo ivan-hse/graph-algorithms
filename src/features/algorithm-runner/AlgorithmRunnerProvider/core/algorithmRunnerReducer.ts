@@ -1,11 +1,13 @@
+import type { TBaseObject } from "@/shared/types";
+
 import { INITIAL_STATE } from "../static/INITIAL_STATE.ts";
 import type { IAlgorithmRunnerState } from "../types/IAlgorithmRunnerState.ts";
 import type { TAlgorithmRunnerAction } from "../types/TAlgorithmRunnerAction.ts";
 
 const algorithmRunnerReducer = (
-  state: IAlgorithmRunnerState,
-  action: TAlgorithmRunnerAction,
-): IAlgorithmRunnerState => {
+  state: IAlgorithmRunnerState<TBaseObject>,
+  action: TAlgorithmRunnerAction<TBaseObject>,
+): IAlgorithmRunnerState<TBaseObject> => {
   switch (action.type) {
     case "LOAD_STEPS":
       return {

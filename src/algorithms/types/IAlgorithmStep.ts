@@ -1,9 +1,7 @@
-interface IAlgorithmStep {
+interface IAlgorithmStep<TAlgorithmState extends object> {
   stepNumber: number;
   description: string;
-  highlightedNodes: string[];
-  highlightedEdges: string[];
-  state: Record<string, unknown>;
+  state: TAlgorithmState;
 
   pseudocodeLine?: number;
 }

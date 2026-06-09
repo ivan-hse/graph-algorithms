@@ -1,0 +1,58 @@
+.node {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.connect {
+  position: absolute;
+  inset: 0;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--mantine-color-dark-2);
+  border-radius: 50%;
+  background-color: var(--mantine-color-dark-6);
+  cursor: crosshair;
+  transform: none;
+  transition: border-color 0.25s ease-in-out;
+}
+
+.node.start .connect {
+  border-color: var(--mantine-color-teal-4);
+}
+
+.node.visited .connect {
+  border-color: var(--mantine-color-lime-4);
+}
+
+.node.inQueue .connect {
+  border-color: var(--mantine-color-blue-4);
+}
+
+.node.current .connect {
+  border-color: var(--mantine-color-violet-4);
+}
+
+.body {
+  position: absolute;
+  inset: 10px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: grab;
+}
+
+.body:active {
+  cursor: grabbing;
+}
+
+.label {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--mantine-color-white);
+  pointer-events: none;
+  user-select: none;
+}

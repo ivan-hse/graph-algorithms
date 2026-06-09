@@ -1,0 +1,3 @@
+const CONNECTION_RADIUS = 20;
+
+export { CONNECTION_RADIUS };

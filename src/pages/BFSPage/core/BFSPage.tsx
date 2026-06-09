@@ -1,7 +1,13 @@
-import { AlgorithmPageLayout } from "@/shared/layouts/AlgorithmPageLayout";
+import { AlgorithmRunnerProvider } from "@/features/algorithm-runner";
+
+import { BFSPageContent } from "./BFSPageContent.tsx";
 
 const BFSPage = () => {
-  return <AlgorithmPageLayout>BFSPage</AlgorithmPageLayout>;
+  return (
+    <AlgorithmRunnerProvider>
+      <BFSPageContent />
+    </AlgorithmRunnerProvider>
+  );
 };
 
 export { BFSPage };

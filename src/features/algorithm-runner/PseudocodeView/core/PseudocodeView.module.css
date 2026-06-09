@@ -1,0 +1,18 @@
+.code {
+  font-family: var(--mantine-font-family-monospace);
+  font-size: 14px;
+  line-height: 1.8;
+  white-space: pre;
+}
+
+.line {
+  padding: 0 8px;
+  border-left: 2px solid transparent;
+}
+
+.currentLine {
+  padding: 0 8px;
+  border-left: 2px solid var(--mantine-color-violet-4);
+  background-color: var(--mantine-color-dark-5);
+  color: var(--mantine-color-violet-2);
+}

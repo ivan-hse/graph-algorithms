@@ -1,7 +1,7 @@
 import type { IAlgorithmStep } from "@/algorithms/types";
 
-interface IAlgorithmRunnerState {
-  steps: IAlgorithmStep[];
+interface IAlgorithmRunnerState<TAlgorithmState extends object> {
+  steps: IAlgorithmStep<TAlgorithmState>[];
   currentStepIndex: number;
   isPlaying: boolean;
 }

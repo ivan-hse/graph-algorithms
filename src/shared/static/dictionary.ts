@@ -27,6 +27,35 @@ const dictionary = {
   useGraphError: "useGraph должен использоваться внутри <GraphProvider>",
   useAlgorithmRunnerError:
     "useAlgorithmRunner должен использоваться внутри <AlgorithmRunnerProvider>",
+  stepCounter: (currentStep: number, totalSteps: number) =>
+    `Шаг ${currentStep} из ${totalSteps}`,
+  pressRunHint: (algorithmName: string) =>
+    `Постройте граф, выберите стартовую вершину и нажмите «Запустить ${algorithmName}».`,
+  pause: "Пауза",
+  play: "Запустить воспроизведение",
+  startNode: "Стартовая вершина",
+  startNodePlaceholder: "Выберите вершину",
+  runAlgorithm: (algorithmName: string) => `Запустить ${algorithmName}`,
+  stepBackward: "Шаг назад",
+  stepForward: "Шаг вперед",
+  reset: "Сбросить",
+  queue: "Очередь",
+  queueIsEmpty: "Очередь пуста",
+  pseudocode: "Псевдокод",
+  bfsInit: (label: string) =>
+    `Помещаем стартовую вершину ${label} в очередь и помечаем ее посещенной.`,
+  bfsDequeue: (label: string) =>
+    `Извлекаем вершину ${label} из очереди и начинаем просматривать ее соседей.`,
+  bfsCheckVisited: (neighborLabel: string, currentNodeLabel: string) =>
+    `Сосед ${neighborLabel} вершины ${currentNodeLabel} уже посещен — пропускаем его.`,
+  bfsEnqueue: (neighborLabel: string, currentNodeLabel: string) =>
+    `Сосед ${neighborLabel} вершины ${currentNodeLabel} еще не посещен — помечаем его посещенным и добавляем в очередь.`,
+  bfsNoNeighbors: (currentNodeLabel: string) =>
+    `У вершины ${currentNodeLabel} нет соседей для обработки.`,
+  bfsDone: (visited: number, total: number) =>
+    `Очередь пуста — обход завершен. Посещено вершин: ${visited} из ${total}.`,
+  emptyGraphHint:
+    "Граф пуст. Добавьте вершины двойным кликом по полю, затем соедините их ребрами.",
 } as const;
 
 export { dictionary };
