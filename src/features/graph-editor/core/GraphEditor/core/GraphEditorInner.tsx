@@ -8,6 +8,7 @@ import {
   ConnectionMode,
   Controls,
   type Edge,
+  Panel,
   ReactFlow,
   useEdgesState,
   useNodesState,
@@ -18,6 +19,7 @@ import { getNextNodeLabel } from "@/shared/lib";
 import { useGraph } from "@/shared/state/GraphProvider";
 
 import { NODE_RADIUS } from "../../../static/NODE_RADIUS.ts";
+import { DirectionToggle } from "../../DirectionToggle";
 import { FloatingConnectionLine } from "../../FloatingEdge";
 import type { TRoundNode } from "../../RoundNode";
 import { toFloatingEdge } from "../lib/toFloatingEdge.ts";
@@ -148,14 +150,22 @@ const GraphEditorInner = (props: IGraphEditorProps) => {
         onEdgesDelete={handleEdgesDelete}
         connectionMode={ConnectionMode.Loose}
         connectionRadius={CONNECTION_RADIUS}
-        nodesDraggable={!isReadonly}
         nodesConnectable={!isReadonly}
+        nodesDraggable={!isReadonly}
+        nodesFocusable={!isReadonly}
+        edgesFocusable={!isReadonly}
+        elementsSelectable={!isReadonly}
         deleteKeyCode={isReadonly ? null : "Backspace"}
         fitView
         zoomOnDoubleClick={false}
       >
-        <Background />
+        <Panel position="top-left">
+          <DirectionToggle isReadonly={isReadonly} />
+        </Panel>
+
         <Controls showInteractive={false} />
+
+        <Background />
       </ReactFlow>
     </div>
   );

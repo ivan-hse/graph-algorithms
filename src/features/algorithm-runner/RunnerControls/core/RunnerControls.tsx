@@ -40,13 +40,13 @@ const RunnerControls = (props: IRunnerControlsProps) => {
       <Select
         data={nodeOptions}
         value={startNodeId}
-        disabled={!nodeOptions.length}
+        disabled={!nodeOptions.length || isPlaying}
         label={dictionary.startNode}
         placeholder={dictionary.startNodePlaceholder}
         onChange={onStartNodeChange}
       />
 
-      <Button disabled={!canRunAlgorithm} onClick={onRunAlgorithm}>
+      <Button disabled={!canRunAlgorithm || isPlaying} onClick={onRunAlgorithm}>
         {dictionary.runAlgorithm(algorithmName)}
       </Button>
 

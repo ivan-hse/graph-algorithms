@@ -56,6 +56,8 @@ const dictionary = {
     `Очередь пуста — обход завершен. Посещено вершин: ${visited} из ${total}.`,
   emptyGraphHint:
     "Граф пуст. Добавьте вершины двойным кликом по полю, затем соедините их ребрами.",
+  undirected: "Неориентированный",
+  directed: "Ориентированный",
 } as const;
 
 export { dictionary };

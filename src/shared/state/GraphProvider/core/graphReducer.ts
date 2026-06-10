@@ -1,3 +1,4 @@
+import { deduplicateEdges } from "@/shared/lib";
 import type { IGraph } from "@/shared/types";
 
 import { INITIAL_GRAPH } from "../static/INITIAL_GRAPH.ts";
@@ -46,7 +47,11 @@ const graphReducer = (state: IGraph, action: TGraphAction): IGraph => {
       };
 
     case "TOGGLE_DIRECTED":
-      return { ...state, isDirected: action.isDirected };
+      return {
+        ...state,
+        isDirected: action.isDirected,
+        ...(!action.isDirected && { edges: deduplicateEdges(state.edges) }),
+      };
 
     case "CLEAR_GRAPH":
       return INITIAL_GRAPH;
