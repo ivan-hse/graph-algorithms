@@ -1,8 +1,16 @@
+import { useState } from "react";
+
 import "@mantine/core/styles.css";
+import "@mantine/notifications/styles.css";
 
 import { MantineProvider } from "@mantine/core";
+import { Notifications } from "@mantine/notifications";
 import { Router, Route, Switch } from "wouter";
 
+import {
+  GraphStorageBridge,
+  loadGraphFromStorage,
+} from "@/features/graph-storage";
 import { BellmanFordPage } from "@/pages/BellmanFordPage";
 import { BFSPage } from "@/pages/BFSPage";
 import { DFSPage } from "@/pages/DFSPage";
@@ -19,9 +27,15 @@ import { theme } from "./theme.ts";
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 const App = () => {
+  const [initialGraph] = useState(loadGraphFromStorage);
+
   return (
     <MantineProvider forceColorScheme="dark" theme={theme}>
-      <GraphProvider>
+      <Notifications />
+
+      <GraphProvider initialGraph={initialGraph}>
+        <GraphStorageBridge />
+
         <Router base={base}>
           <Switch>
             <Route path={ROUTES.START} component={StartPage} />

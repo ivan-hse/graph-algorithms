@@ -58,6 +58,15 @@ const dictionary = {
     "Граф пуст. Добавьте вершины двойным кликом по полю, затем соедините их ребрами.",
   undirected: "Неориентированный",
   directed: "Ориентированный",
+  importGraph: "Импортировать граф",
+  exportGraph: "Экспортировать граф",
+  clearGraph: "Очистить граф",
+  importSuccessTitle: "Импорт графа",
+  importSuccessMessage: "Граф успешно импортирован",
+  importErrorTitle: "Ошибка импорта",
+  importErrorMessage:
+    "Не удалось импортировать граф: файл поврежден или имеет неверный формат",
+  parseGraphError: "Ребро ссылается на несуществующую вершину",
 } as const;
 
 export { dictionary };

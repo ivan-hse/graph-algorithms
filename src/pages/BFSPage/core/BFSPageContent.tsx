@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-import { Stack, Text } from "@mantine/core";
+import { Group, Stack, Text } from "@mantine/core";
 
 import { bfs, BFS_PSEUDOCODE, type IBFSState } from "@/algorithms/bfs";
 import {
@@ -11,6 +11,8 @@ import {
   useAlgorithmRunner,
 } from "@/features/algorithm-runner";
 import { GraphEditor, type IGraphHighlight } from "@/features/graph-editor";
+import { GraphIOControls } from "@/features/graph-io";
+import { ClearGraphButton } from "@/features/graph-storage";
 import { AlgorithmPageLayout } from "@/shared/layouts/AlgorithmPageLayout";
 import { useGraph } from "@/shared/state/GraphProvider";
 import { dictionary } from "@/shared/static";
@@ -108,7 +110,17 @@ const BFSPageContent = () => {
 
   return (
     <AlgorithmPageLayout asideContent={asideContent}>
-      <GraphEditor highlight={highlight} isReadonly={isPlaying} />
+      <GraphEditor
+        highlight={highlight}
+        isReadonly={isPlaying}
+        toolbar={
+          <Group gap="lg">
+            <GraphIOControls isDisabled={isPlaying} />
+
+            <ClearGraphButton isDisabled={isPlaying} />
+          </Group>
+        }
+      />
     </AlgorithmPageLayout>
   );
 };

@@ -31,7 +31,7 @@ import { REACT_FLOW_PANE_CLASS } from "../static/REACT_FLOW_PANE_CLASS.ts";
 import type { IGraphEditorProps } from "../types/IGraphEditorProps.ts";
 
 const GraphEditorInner = (props: IGraphEditorProps) => {
-  const { highlight, isReadonly = false } = props;
+  const { highlight, isReadonly = false, toolbar } = props;
 
   const { graph, dispatch } = useGraph();
 
@@ -158,10 +158,13 @@ const GraphEditorInner = (props: IGraphEditorProps) => {
         deleteKeyCode={isReadonly ? null : "Backspace"}
         fitView
         zoomOnDoubleClick={false}
+        proOptions={{ hideAttribution: true }}
       >
         <Panel position="top-left">
           <DirectionToggle isReadonly={isReadonly} />
         </Panel>
+
+        {toolbar && <Panel position="top-right">{toolbar}</Panel>}
 
         <Controls showInteractive={false} />
 
